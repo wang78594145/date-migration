@@ -1,0 +1,37 @@
+/**
+ * element相关样式修改
+ * @author tianfeifei
+ * @date 2019-03-26
+*/
+.el-dialog__header {
+	background: #409EFF;	
+}
+.el-dialog__title {
+	color: white;
+}
+.el-dialog__headerbtn .el-dialog__close {
+	color: white;
+}
+.el-dialog__headerbtn .el-dialog__close:hover {
+	color: white;
+}
+.el-form-item:last-child {
+	margin-bottom: 0px;
+}
+.el-dialog {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0 !important;
+}
+.task-enter-wrap .el-table__body-wrapper {
+	height: calc(100vh - 637px);
+	min-height: 250px;
+  overflow-y: scroll;
+}
+.require-search-wrap .el-table__body-wrapper {
+	height: calc(100vh - 525px);
+  overflow-y: scroll;
+  min-height: 300px;
+}

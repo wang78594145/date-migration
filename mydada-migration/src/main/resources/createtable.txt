@@ -1,0 +1,43 @@
+create table tasks(
+id bigint not null,
+name character varying(20),
+create_time time without time zone,
+finish_time time without time zone,
+dsource_id integer,
+lat_begin double precision,
+lat_end double precision,
+lon_begin double precision,
+lon_end double precision,
+input_path character varying(50),
+output_format smallint,
+output_path character varying(50),
+layer_min smallint,
+layer_max smallint,
+task_total integer,
+task_done integer,
+progress smallint,
+status character varying(20),
+comments character varying(100),
+primary key(id)
+);
+
+
+CREATE SEQUENCE public.tasks_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 999999999
+    CACHE 100;
+ALTER SEQUENCE public.tasks_seq
+    OWNER TO postgres;
+
+alter table tasks alter column task_id set default nextval('tasks_seq');
+
+INSERT INTO tasks VALUES (nextval('tasks_seq'));
+SELECT task_id FROM tasks;
+
+alter table tasks drop column data_source;
+alter table tasks add column dsource_id integer;
+ALTER TABLE tasks ALTER output_format TYPE smallint USING output_format::smallint;
+
+alter table tasks add column create_time timestamp without time zone default now();

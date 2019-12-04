@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://192.168.5.62:5432/datamigration
+    url: jdbc:postgresql://postgres:5432/datamigration
+    username: postgres
+    password: postgres
+
+
+pagehelper:
+  helper-dialect: postgresql
+  reasonable: true
+  support-methods-arguments: true
+  params: count==countSql
+  page-size-zero: true
+
+
+limitTasksNum: 2
+isH2SBrokenPoint: true
+h2SThreadCount: 20
+h2SWriteCount: 20000
+ifBreakPointResumeOn: true
+s2SthreadNum: 5
